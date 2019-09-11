@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Asynchronous JavaScript</title>
+</head>
+<body>
+    <h1>Asynchronous JavaScript</h1>
+    <script>
+
+        //-----An Example of asyncronous Java Script------
+        /*
+        const second = () => {
+            setTimeout(() => {
+                console.log('Async Hey there.')
+            }, 2000)
+        }
+
+        const first = () => {
+            console.log('Hey there!');
+            second();
+            console.log('The end.');
+            }
+        
+        first();
+        */
+
+        function getRecipe() {
+            setTimeout(() => {
+                const recipeID = [523, 883, 417, 359];
+                console.log(recipeID); 
+
+                setTimeout((id) = > {
+
+                }, 1000, recipeID)
+
+            }, 1500) 
+        }
+        getRecipe();
+
+   
+    </script>
+</body>
+</html>
