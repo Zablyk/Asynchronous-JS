@@ -165,12 +165,34 @@
        
         //----------126--------------
         //---Making AJAX Calls with Fetch and Promises
-            fetch(`https://crossorigin.me/https://www.metaweather.com/api/location/2487956/`)
+        /*
+        function getWeather(woeid){
+            fetch(`https://crossorigin.me/https://www.metaweather.com/api/location/${woeid}/`)
             .then(result => {
                 console.log(result);
+                return result.json();
+            })
+            .then(data => {
+                //console.log(data);
+                const today = data.consolidated_weather[0];
+                console.log(`Temperature in ${data.title} stay between ${data.min_temp} and ${data.max_temp}.`)
             })
             .catch(error => console.log(error));
+         }
+        getWeather(2487956);        
+        getWeather(44418);
+        */ 
 
+        //----------127--------------
+        //---Making AJAX Calls with Fetch and Promises Async/Await
+         async function getWeatherAW(woeid) {
+            const result = await fetch(`https://crossorigin.me/https://www.metaweather.com/api/location/${woeid}/`)
+            const data = await result.json();
+            console.log(data);
+            }
+        getWeatherAW(2487956);        
+        getWeatherAW(44418);
+        
 
     </script>
 </body>
