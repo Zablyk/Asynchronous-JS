@@ -116,6 +116,7 @@
 
         //----------124--------------
         //---From Promises to Async/Await in ES8/ES2017
+        /*
         const getIDs = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve([523, 883, 417, 359]);
@@ -160,7 +161,16 @@
                 return recipe;
             }
             getRecipeAW().then(result => console.log(`${result} is the best ever`));
-            
+        */  
+       
+        //----------126--------------
+        //---Making AJAX Calls with Fetch and Promises
+            fetch(`https://crossorigin.me/https://www.metaweather.com/api/location/2487956/`)
+            .then(result => {
+                console.log(result);
+            })
+            .catch(error => console.log(error));
+
 
     </script>
 </body>
